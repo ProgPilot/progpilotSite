@@ -1,0 +1,76 @@
+body {
+  background-color: black;
+  /*height: 100vh;*/
+  margin: 0;
+  padding: 2rem;
+  color: #70B778;
+  text-shadow: 0 0 20px #557258;
+  overflow-x: hidden;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+
+::selection {
+  background: #70B778;
+  text-shadow: none;
+  color: white;
+}
+
+output {
+  font-size: 15px; 
+  font-family: 'modesevenregular', 'Courier New', Courier, monospace; 
+}
+
+pre {
+  margin: 0;
+  
+}
+
+a {
+  color: inherit;
+}
+
+/* blinking cursor */
+.cursor {
+  animation: cursor-animation 1s steps(5, start) infinite;
+  -webkit-animation: cursor-animation 1s steps(5, start) infinite;
+}
+@keyframes cursor-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes cursor-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+/* hide JS only section */
+
+#jsonly {
+  display: none;
+}
+
+/* detect mobile devices */
+@media only screen and (max-width: 760px) {
+  #mobileindicator {
+    display: none;
+  }
+
+  body {
+    padding: 1rem;
+  }
+
+  output {
+    font-size: 70%;
+  }
+}
